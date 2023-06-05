@@ -1,10 +1,9 @@
 import React from "react";
 
-function CategoryFilter({categories, setCatSelected }) {
+function CategoryFilter({categories, setCatSelected, catSelected}) {
  
-  const handleCategorySelection = (e) => {
-    e.target.className="selected"
-    setCatSelected(e.target.innerText)
+  const handleCategorySelection = (category) => {
+      setCatSelected(category)
  }   
  
  return (
@@ -12,7 +11,7 @@ function CategoryFilter({categories, setCatSelected }) {
       <h5>Category filters</h5>
       {/* render <button> elements for each category here */}
       {categories.map((category) => (
-          <button key={category} onClick={handleCategorySelection}>{category}</button>
+          <button className={catSelected === category ? "selected": null } key={category} onClick={() => handleCategorySelection(category)}>{category}</button>
       ))}
     </div>
   );

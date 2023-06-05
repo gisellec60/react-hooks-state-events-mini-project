@@ -24,7 +24,7 @@ const newTaskList = taskData.filter ((task) => {
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} setCatSelected={setCatSelected} catSelected={catSelected} 
-          />
+         catSelected={catSelected} />
       <NewTaskForm categories={categoryData} onTaskFormSubmit={handleAddNewTask} />
       <TaskList tasks={newTaskList} setTask={setTaskData} />
     </div>
